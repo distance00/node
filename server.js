@@ -15,10 +15,10 @@ YErlo/x2cFL/Z4c5yEYJh35IaqtHON24AiEA6WN2X6M5eW2L++ucYekWY5DHz2mc
 GqQh2l81vwFI7t0=
 -----END CERTIFICATE-----`;
 
-var server = http.createServer((req, res) => {
-	res.statusCode = 200;
-	res.setHeader('Content-Type', 'application/x-x509-ca-cert');
-	res.end(cert);
+var server = http.createServer((request, response) => {
+	response.statusCode = 200;
+	response.setHeader('Content-Type', 'application/x-x509-ca-cert');
+	response.end(cert);
 });
 
 var serverPort = process.env.PORT || 5000;
